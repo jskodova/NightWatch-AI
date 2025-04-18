@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/fca0ba99-50c8-44f4-9e0f-5aa40b8f44ec)# NightWatch-AI
+# NightWatch-AI
 
 Final project for the Building AI course
 
@@ -9,6 +9,8 @@ NightWatch-AI is an intelligent system designed to monitor and analyze light pol
 ## Background
 
 Light pollution, caused by excessive artificial lighting, is a growing environmental issue. Despite its broad implications, it remains an overlooked aspect of environmental monitoring. It disrupts ecosystems, affects human health, obscures our view of the night sky, and contributes to energy waste. This project aims to address that gap by offering a scalable, data-driven solution that automatically analyzes and maps light pollution.
+
+<img src="https://i.redd.it/0pcgu4ha31u61.jpg" width="400">
 
 The lack of comprehensive, high-quality data makes it hard to monitor light pollution. Current methods, such as satellite observations and manual ground measurements, are too infrequent and sparse to combat the problem.
 
@@ -39,10 +41,6 @@ Other metadata, such as weatherdata, astrological data, population density and s
 AI Usage:
 
 NightWatch-AI processes and analyzes night-time satellite images using CNN models. The images will first be classified to filter unusable images that feature high cloud cover or high level of moonlight. The remaining images will be labeled according to light intensity, enabling the models to learn spatial patterns associated with different levels of light pollution and estimate sky brightness. These classifications are then mapped onto geographic overlays to identify light pollution hotspots. The data pipeline includes preprocessing steps such as normalization, resizing, and cloud coverage filtering to ensure accuracy. Future work might include adding object detection from ground data, such as streetlights or different light sources.
-
-
-<img src="https://i.redd.it/0pcgu4ha31u61.jpg" width="400">
-
 
 
 ## Challenges
