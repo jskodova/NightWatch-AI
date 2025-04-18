@@ -1,4 +1,4 @@
-# NightWatch-AI
+![image](https://github.com/user-attachments/assets/fca0ba99-50c8-44f4-9e0f-5aa40b8f44ec)# NightWatch-AI
 
 Final project for the Building AI course
 
@@ -41,7 +41,7 @@ AI Usage:
 NightWatch-AI processes and analyzes night-time satellite images using CNN models. The images will first be classified to filter unusable images that feature high cloud cover or high level of moonlight. The remaining images will be labeled according to light intensity, enabling the models to learn spatial patterns associated with different levels of light pollution and estimate sky brightness. These classifications are then mapped onto geographic overlays to identify light pollution hotspots. The data pipeline includes preprocessing steps such as normalization, resizing, and cloud coverage filtering to ensure accuracy. Future work might include adding object detection from ground data, such as streetlights or different light sources.
 
 
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fcivilengineering%2Fcomments%2Fmtpmvb%2Fintersting_concept_to_reduce_light_pollution_not%2F&psig=AOvVaw2-JcS3Dg_1AhMqD3oYa0E-&ust=1745085681113000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIDVvfKU4owDFQAAAAAdAAAAABAO](https://github.com/jskodova/NightWatch-AI/blob/main/artificiallighting.jpg" width="400">
+<img src="https://i.redd.it/0pcgu4ha31u61.jpg" width="400">
 
 
 
