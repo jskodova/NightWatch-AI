@@ -53,3 +53,65 @@ If higher resolution data is used in the future, it might raise privacy concerns
 
 In future versions, the project could be expanded into a public web platform that allows users to explore light pollution trends over time and across regions. Additional AI models could be incorporated to predict future pollution based on urban development trends or seasonal variations. It would be interesting to collaborate with city councils to support real-world implementation. One idea could be to develop smart lighting systems autonomously adjust intensity based on AI recommendations.
 
+## Code example
+
+```
+import numpy as np
+import cv2
+import os
+import tensorflow as tf
+from tensorflow.keras import layers, models
+import matplotlib.pyplot as plt
+
+# Loading satellite images
+def load_images_from_folder(folder, image_size=(128, 128)):
+    images = []
+    for filename in os.listdir(folder):
+        img = cv2.imread(os.path.join(folder, filename))
+        if img is not None:
+            img = cv2.resize(img, image_size)
+            img = img / 255.0  # Normalize
+            images.append(img)
+    return np.array(images)
+
+images = load_images_from_folder('./satellite_data')
+
+# Filtering of clouds/moonlight
+def filter_cloudy_images(images, cloud_threshold=0.4):
+    # Simulate cloud detection using average brightness
+    filtered = []
+    for img in images:
+        brightness = np.mean(img)
+        if brightness < cloud_threshold:  # assume cloudy/moonlit images are brighter
+            filtered.append(img)
+    return np.array(filtered)
+
+filtered_images = filter_cloudy_images(images)
+
+# Classification of light pollution
+def create_model():
+    model = models.Sequential([
+        layers.Input(shape=(128, 128, 3)),
+        layers.Conv2D(32, (3, 3), activation='relu'),
+        layers.MaxPooling2D(2, 2),
+        layers.Conv2D(64, (3, 3), activation='relu'),
+        layers.MaxPooling2D(2, 2),
+        layers.Flatten(),
+        layers.Dense(64, activation='relu'),
+        layers.Dense(3, activation='softmax')  # Classes: Low, Medium, High
+    ])
+    model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    return model
+
+labels = np.random.randint(0, 3, size=(len(filtered_images),))  # 0 = Low, 1 = Medium, 2 = High
+
+model = create_model()
+model.fit(filtered_images, labels, epochs=5, batch_size=8)
+
+predictions = model.predict(filtered_images)
+predicted_classes = np.argmax(predictions, axis=1)
+
+coords = [(60.1695 + i * 0.01, 24.9354 + i * 0.01) for i in range(len(predicted_classes))]
+print(f"Location ({lat:.4f}, {lon:.4f}): Light Pollution = {['Low', 'Medium', 'High'][predicted_classes[i]]}")
+
+```
