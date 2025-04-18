@@ -8,7 +8,7 @@ NightWatch-AI is an intelligent system designed to monitor and analyze light pol
 
 ## Background
 
-Light pollution, caused by excessive artificial lighting, is a growing environmental issue. Despite its broad implications, it remains an overlooked aspect of environmental monitoring. It disrupts ecosystems, affects human health, obscures our view of the night sky, and contributes to energy waste. This project aims to address that gap by offering a scalable, data-driven solution that automatically analyzes and maps light pollution.
+Light pollution, caused by excessive artificial lighting, is a growing environmental issue. Despite its worrying implications, it remains an overlooked aspect of environmental monitoring. It disrupts ecosystems, affects human health, obscures our view of the night sky, and contributes to energy waste. This project aims to address that gap by offering a scalable, data-driven solution that automatically analyzes and maps light pollution.
 
 <img src="https://i.redd.it/0pcgu4ha31u61.jpg" width="400">
 
