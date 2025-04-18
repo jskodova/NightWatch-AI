@@ -113,5 +113,4 @@ predicted_classes = np.argmax(predictions, axis=1)
 
 coords = [(60.1695 + i * 0.01, 24.9354 + i * 0.01) for i in range(len(predicted_classes))]
 print(f"Location ({lat:.4f}, {lon:.4f}): Light Pollution = {['Low', 'Medium', 'High'][predicted_classes[i]]}")
-
 ```
